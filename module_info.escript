@@ -52,12 +52,17 @@ main([BaseDir]) ->
     {ok, ReExports} = re:compile(?RE_EXPORTS, [multiline]),
     {ok, ReFun} = re:compile(?RE_FUNS, [multiline]),
     Modules = get_modules(BaseDir),
-    F = fun(M) ->
-        Set = sets:from_list(extract_exports(M, ReExports, ReFun)),
-        Funs = lists:sort(sets:to_list(Set)),
-        {module_name(list_to_binary(M)), Funs}
+    F = fun(M, Acc) ->
+        case extract_exports(M, ReExports, ReFun) of
+            none ->
+                Acc;
+            Ls ->
+                Set = sets:from_list(Ls),
+                Funs = lists:sort(sets:to_list(Set)),
+                [{module_name(list_to_binary(M)), Funs} | Acc]
+        end
     end,
-    ModuleFuns = maps:from_list(lists:map(F, Modules)),
+    ModuleFuns = maps:from_list(lists:foldl(F, [], Modules)),
     io:format("~s~n", [jsx:encode(ModuleFuns)]).
 
 get_modules(BaseDir) ->
