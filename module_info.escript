@@ -19,7 +19,31 @@
                         "qlc", "queue", "rand", "random",
                         "re", "sets", "shell", "slave",
                         "sofs", "string", "supervisor", "supervisor_bridge",
-                        "sys", "timer", "unicode", "win32reg", "zip"]).
+                        "sys", "timer", "unicode", "win32reg",
+                        "zip", "compile", "erl_prim_loader", "erlang",
+                        "init", "zlib", "erl_driver", "erl_nif",
+                        "application", "auth", "code", "disk_log",
+                        "erl_boot_server", "erl_ddll", "error_handler", "error_logger",
+                        "file", "gen_tcp", "gen_udp", "gen_sctp",
+                        "global", "global_group", "heart", "inet",
+                        "inet_res", "net_adm", "net_kernel", "os",
+                        "pg2", "rpc", "seq_trace", "wrap_log_reader",
+                        "alarm_handler", "overload", "rb", "release_handler",
+                        "systools", "mnesia", "mnesia_frag_hash", "mnesia_registry",
+                        "odbc", "cpu_sup", "disksup", "memsup",
+                        "os_mon_mib", "os_sup", "nteventlog", "otp_mib",
+                        "asn1ct", "asn1rt", "crypto", "diameter",
+                        "diameter_app", "diameter_codec", "diameter_make", "diameter_transport",
+                        "diameter_tcp", "diametr_sctp", "eldap", "ei",
+                        "ei_connect", "registry", "erl_connect", "erl_error",
+                        "erl_eterm", "erl_format", "erl_global", "erl_malloc",
+                        "erl_marshal", "gs", "inets", "ftp",
+                        "tftp", "httpc", "httpd", "httpd_conf",
+                        "httpd_custom_api", "httpd_socket", "httpd_util", "mod_alias",
+                        "mod_auth", "mod_esi", "mod_security", "http_uri",
+                        "public_key", "ssh", "ssh_channel", "ssh_connection",
+                        "ssh_client_key_api", "ssh_server_key_api", "ssh_sftp", "ssh_sftpd",
+                        "ssl", "ssl_crl_cache", "ssl_crl_cache_api", "ssl_session_cache_api"]).
 
 main([]) ->
     io:format("Usage: module_info base_dir~n");
