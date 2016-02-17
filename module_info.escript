@@ -67,7 +67,7 @@ main([BaseDir]) ->
 
 get_modules(BaseDir) ->
     WhiteList = sets:from_list(?MOD_WHITELIST),
-    Modules = filelib:wildcard("**/src/*.erl", BaseDir),
+    Modules = filelib:wildcard("**/src/**/*.erl", BaseDir),
     [filename:join(BaseDir, Fn) || Fn <- Modules,
                                 sets:is_element(module_name(Fn), WhiteList)].
 
